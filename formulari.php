@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
    foreach ($_REQUEST as $key => $value) {
@@ -14,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	?>
    <div style="margin: 30px 10%;">
 <h3>My form</h3>
-<form action="processa_dades.php" method="post" id="myform" name="myform">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" id="myform" name="myform">
 
     <label>Text</label> <input type="text" value="" size="30" maxlength="100" name="mytext" id="" /><br /><br />
 
@@ -42,4 +49,8 @@ Text area
 
 </form>
 </div>
+<?
 }
+?>
+</body>
+</html>
