@@ -21,6 +21,8 @@
 	$columnas=7;
 	$num=1;
 	$pos=1;
+
+	$today= strtolower(date('d',strtotime('today')));
 		
 		for($i=0; $i<$filas ;$i++){
 			echo "<tr>";
@@ -29,11 +31,14 @@
 			
 				if ($pos==5) {
 					if($num<=31){
-				
-					echo "<td>$num</td>";
-					$num+=1;
+						if($num!=$today){
+						echo "<td>$num</td>";
+						}
+						else{
+							echo "<td><font color='red'>$num</font></td>";
+						}
 					}
-					
+					$num+=1;
 				}else{
 					echo "<td></td>";
 						$pos++;}
@@ -41,9 +46,7 @@
 			}
 		
 			echo "</tr>";
-		}
-		 
-
+		}	 
 	?>
 </table>
 </body>
