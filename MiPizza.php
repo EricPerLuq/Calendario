@@ -17,8 +17,7 @@
 	$preu=0.0;
 	if ($_POST[massa]== false || $_POST[orenga]==false) {
 		echo "Sense massa y orenga no hi ha pizza";
-		$_POST[massa]=true;
-		$_POST[orenga]=true;
+
 	}else{
 		$preu=$preu+5;
 		
